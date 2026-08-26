@@ -2,11 +2,21 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 	die();
 
+$arResult['PROPERTIES'] = [
+	'UF_DELETE_INDEX' => [],
+];
+
 $page = $APPLICATION->GetCurPage();
 $code = explode('/', $page);
-$dbRes = CIBlockSection::GetList(array(), ["IBLOCK_ID" => IBLOCK_CATALOG, "CODE" => $code[2]], false, array("ID", "UF_*"));
-if ($arCurSection = $dbRes->Fetch())
-	$arResult['PROPERTIES'] = $arCurSection;
+if (!empty($code[2])) {
+	$dbRes = CIBlockSection::GetList(array(), ["IBLOCK_ID" => IBLOCK_CATALOG, "CODE" => $code[2]], false, array("ID", "UF_*"));
+	if ($arCurSection = $dbRes->Fetch()) {
+		$arResult['PROPERTIES'] = $arCurSection;
+		if (!is_array($arResult['PROPERTIES']['UF_DELETE_INDEX'])) {
+			$arResult['PROPERTIES']['UF_DELETE_INDEX'] = [];
+		}
+	}
+}
 //determine if child selected
 
 $bWasSelected = false;

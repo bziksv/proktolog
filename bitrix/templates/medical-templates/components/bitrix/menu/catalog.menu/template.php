@@ -1,6 +1,12 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 <?if (!empty($arResult)):?>
+<?php
+$ufDeleteIndex = $arResult['PROPERTIES']['UF_DELETE_INDEX'] ?? [];
+if (!is_array($ufDeleteIndex)) {
+	$ufDeleteIndex = [];
+}
+?>
 
 <div class="catalog">
 	<div class="catalog__head">Каталог товаров</div>
@@ -17,7 +23,7 @@ foreach($arResult as $key => $arItem):
 	<?if ($arItem["IS_PARENT"]):?>
 			<li<?if($arItem["CHILD_SELECTED"] !== true):?> <?endif?> class="catalog__item">
 
-                <? if(in_array($arItem["PARAMS"]["ID"], $arResult['PROPERTIES']['UF_DELETE_INDEX'])): ?>
+                <? if(in_array($arItem["PARAMS"]["ID"], $ufDeleteIndex, true)): ?>
                     <a href="<?=$arItem["LINK"]?>" class="catalog__link" data-text="<?=$arItem["TEXT"]?>"></a>
                 <? else: ?>
                     <a href="<?=$arItem["LINK"]?>" class="catalog__link"><?=$arItem["TEXT"]?></a>
@@ -29,7 +35,7 @@ foreach($arResult as $key => $arItem):
 
 		<?if ($arItem["PERMISSION"] > "D"):?>
 				<li <?if($arItem["DEPTH_LEVEL"] == 1):?>class="catalog__item"<?endif;?>>
-                    <? if(in_array($arItem["PARAMS"]["ID"], $arResult['PROPERTIES']['UF_DELETE_INDEX'])): ?>
+                    <? if(in_array($arItem["PARAMS"]["ID"], $ufDeleteIndex, true)): ?>
                         <a href="<?=$arItem["LINK"]?>" class="<?if($arItem["DEPTH_LEVEL"] > 1):?>catalog__submenu_link<?else:?>catalog__link<?endif;?>" data-text="<?=$arItem["TEXT"]?>"></a>
                     <? else: ?>
                         <a href="<?=$arItem["LINK"]?>" class="<?if($arItem["DEPTH_LEVEL"] > 1):?>catalog__submenu_link<?else:?>catalog__link<?endif;?>"><?=$arItem["TEXT"]?></a>
