@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * Upscale homepage slider PNGs (1520×449) to 1920×567.
+ * Upscale homepage slider PNGs (1520×449) to 1920×567 proportionally.
  *
  * Usage:
  *   node scripts/fix-slider-pngs.mjs
  */
 
 import sharp from 'sharp';
-import { copyFile, stat } from 'node:fs/promises';
+import { stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -19,6 +19,7 @@ const sourcesDir = path.join(__dirname, 'slider-sources');
 const TARGET_W = 1920;
 const TARGET_H = 567;
 const SOURCE_W = 1520;
+const SOURCE_H = 449;
 
 const slides = [
     {
@@ -41,22 +42,17 @@ async function upscale(slide) {
     const sourcePath = path.join(sourcesDir, slide.source);
     const outputPath = path.join(uploadDir, slide.relPath);
 
-    if (slide.mode === 'copy') {
-        await copyFile(sourcePath, outputPath);
-        const fileStat = await stat(outputPath);
-        return { ...slide, bytes: fileStat.size };
-    }
-
     let pipeline = sharp(sourcePath);
     const meta = await pipeline.metadata();
 
     if (slide.mode === 'crop-letterbox' && meta.width > SOURCE_W) {
-        const bar = Math.round((meta.width - SOURCE_W) / 2);
+        const left = Math.round((meta.width - SOURCE_W) / 2);
+        const top = Math.round((meta.height - SOURCE_H) / 2);
         pipeline = sharp(sourcePath).extract({
-            left: bar,
-            top: 0,
+            left,
+            top,
             width: SOURCE_W,
-            height: meta.height,
+            height: SOURCE_H,
         });
     }
 
