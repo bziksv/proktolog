@@ -12,6 +12,7 @@ if (method_exists($this, 'setFrameMode')) {
 }
 
 $this->addExternalCss('/bitrix/components/niges/cookiesaccept/templates/.default/style.css');
+$this->addExternalCss($this->GetFolder() . '/style.css');
 
 $cookieName = htmlspecialcharsbx($arResult['COOKIE_NAME']);
 $textVer = (int)$arResult['TEXTVER'];

@@ -1,0 +1,47 @@
+.nca-cookiesaccept-line-text a {
+	color: #9f5290 !important;
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line-text a:focus {
+	color: #c76bb8 !important;
+}
+
+.nca-cookiesaccept-line.style-1 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-3 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-5 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-7 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-9 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-11 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-13 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-15 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-17 .nca-cookiesaccept-line-text a,
+.nca-cookiesaccept-line.style-19 .nca-cookiesaccept-line-text a {
+	color: #7a3d6e !important;
+}
+
+.nca-cookiesaccept-line.style-1 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-1 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-3 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-3 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-5 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-5 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-7 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-7 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-9 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-9 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-11 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-11 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-13 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-13 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-15 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-15 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-17 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-17 .nca-cookiesaccept-line-text a:focus,
+.nca-cookiesaccept-line.style-19 .nca-cookiesaccept-line-text a:hover,
+.nca-cookiesaccept-line.style-19 .nca-cookiesaccept-line-text a:focus {
+	color: #9f5290 !important;
+}
