@@ -42,7 +42,7 @@ function legal_internal_link(string $path, string $host): string
 
 function legal_doc_href(array $legal, string $key): string
 {
-    return (string) ($legal['images'][$key] ?? $legal['urls'][$key] ?? '');
+    return (string) ($legal['images'][$key] ?? '');
 }
 
 function legal_doc_link(array $legal, string $key, ?string $text = null): string

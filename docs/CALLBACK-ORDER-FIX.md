@@ -11,7 +11,7 @@
 | Шаблон письма | `53`, событие `CALLBACK` |
 | Planfix (как заказы) | `proktolog@almamed.planfix.ru` |
 | Поля | `NAME`, `PHONE`, `MAIL`, `QUERY`, `URL` |
-| Согласие | `/legal/proktolog-soglasie-pd/`, `/legal/proktolog-politika-pd/` |
+| Согласие | `/upload/proktolog-soglasie-pd.jpg`, `/upload/proktolog-politika-pd.jpg` |
 
 ## Изменённые файлы
 
