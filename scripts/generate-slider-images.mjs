@@ -59,16 +59,12 @@ async function letterboxSlide(browser, slide) {
     height: ${SLIDER_HEIGHT}px;
     background: ${BG};
   }
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   img {
     display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: ${SLIDER_WIDTH}px;
+    height: ${SLIDER_HEIGHT}px;
+    object-fit: cover;
+    object-position: center center;
   }
 </style>
 </head>
