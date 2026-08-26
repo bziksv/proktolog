@@ -1,0 +1,21 @@
+<?
+$MESS['ISMAGIN_MENU_TITLE'] = "Очистка файлов";
+$MESS['ISMAGIN_MENU_ITEM_CLEANER'] = "Очистка неиспользуемых файлов";
+$MESS['ISMAGIN_PAGE_TITLE'] = "Очистка неиспользуемых файлов";
+$MESS['ISMAGIN_SETTINGS_TITLE'] = "Настройки очистки файлов";
+$MESS['ISMAGIN_FIELD_DELETE_FILES'] = "Удалять файлы";
+$MESS['ISMAGIN_FIELD_BACKUP_FILES'] = "Создавать резервные копии";
+$MESS['ISMAGIN_FIELD_TARGET_PATH'] = "Путь для очистки";
+$MESS['ISMAGIN_FIELD_BACKUP_PATH'] = "Путь для резервных копий";
+$MESS['ISMAGIN_SAVE_BTN'] = "Сохранить";
+$MESS['ISMAGIN_START_CLEAN_BTN'] = "Начать очистку";
+$MESS['ISMAGIN_CLEAN_SETTINGS_SAVED'] = "Настройки успешно сохранены";
+$MESS['ISMAGIN_ACCESS_DENIED'] = "Доступ запрещен";
+$MESS['ISMAGIN_SETTINGS_STAT'] = "Статистика очистки:";
+$MESS['ISMAGIN_SETTINGS_VSEGO'] = "Всего проверено файлов:";
+$MESS['ISMAGIN_START_CLEAN_UVEREN'] = "Вы уверены, что хотите начать очистку?";
+$MESS['ISMAGIN_SETTINGS_NEISP'] = "Неиспользуемых файлов:";
+$MESS['ISMAGIN_SETTINGS_BACKUP'] = "Создано бэкапов:";
+$MESS['ISMAGIN_SETTINGS_DEL'] = "Удалено файлов:";
+$MESS['ISMAGIN_SETTINGS_PLACE'] = "Освобождено места:";
+$MESS['ISMAGIN_SETTINGS_ER'] = "Ошибок:";

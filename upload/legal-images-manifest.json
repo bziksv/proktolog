@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-08-26T18:54:44.714Z",
+  "baseUrl": "http://127.0.0.1:8102",
+  "documents": [
+    {
+      "title": "proktolog-soglasie-pd",
+      "image": "/upload/proktolog-soglasie-pd.jpg",
+      "imageUrl": "http://127.0.0.1:8102/upload/proktolog-soglasie-pd.jpg",
+      "printUrl": "http://127.0.0.1:8102/legal/print/proktolog-soglasie-pd/",
+      "file": "upload/proktolog-soglasie-pd.jpg"
+    },
+    {
+      "title": "proktolog-politika-pd",
+      "image": "/upload/proktolog-politika-pd.jpg",
+      "imageUrl": "http://127.0.0.1:8102/upload/proktolog-politika-pd.jpg",
+      "printUrl": "http://127.0.0.1:8102/legal/print/proktolog-politika-pd/",
+      "file": "upload/proktolog-politika-pd.jpg"
+    },
+    {
+      "title": "proktolog-politika-cookie",
+      "image": "/upload/proktolog-politika-cookie.jpg",
+      "imageUrl": "http://127.0.0.1:8102/upload/proktolog-politika-cookie.jpg",
+      "printUrl": "http://127.0.0.1:8102/legal/print/proktolog-politika-cookie/",
+      "file": "upload/proktolog-politika-cookie.jpg"
+    },
+    {
+      "title": "proktolog-rekomend-tech",
+      "image": "/upload/proktolog-rekomend-tech.jpg",
+      "imageUrl": "http://127.0.0.1:8102/upload/proktolog-rekomend-tech.jpg",
+      "printUrl": "http://127.0.0.1:8102/legal/print/proktolog-rekomend-tech/",
+      "file": "upload/proktolog-rekomend-tech.jpg"
+    }
+  ]
+}

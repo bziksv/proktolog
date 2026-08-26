@@ -1,0 +1,186 @@
+<? if(!CSite::InDir('/index.php')): ?>
+</div>
+<?endif;?>
+
+<div class="footer">
+    <div class="container">
+        <div class="footer__wrapper footer__row">
+            <div class="footer__col">
+                <div class="footer__subscribe">
+                    <i class="icon-email_big"></i>
+                    <span>Подпишитесь! Новинки, скидки, предложения!</span>
+                </div>
+            </div>
+            <div class="footer__col">
+
+                <?$APPLICATION->IncludeComponent(
+	"bitrix:sender.subscribe", 
+	"sender.subscribe", 
+	array(
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CONFIRMATION" => "N",
+		"HIDE_MAILINGS" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_HIDDEN" => "N",
+		"USER_CONSENT" => "N",
+		"USER_CONSENT_ID" => "1",
+		"USER_CONSENT_IS_CHECKED" => "N",
+		"USER_CONSENT_IS_LOADED" => "N",
+		"USE_PERSONALIZATION" => "Y",
+		"COMPONENT_TEMPLATE" => "sender.subscribe",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
+	),
+	false
+);?>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="footer__row">
+            <div class="footer__col">
+
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "bottom.menu", Array(
+                    "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                    "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                    "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                    "MAX_LEVEL" => "2",	// Уровень вложенности меню
+                    "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                    "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                    "MENU_CACHE_TYPE" => "N",	// Тип кеширования
+                    "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                    "ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
+                    "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    "COMPONENT_TEMPLATE" => "catalog_horizontal",
+                    "MENU_THEME" => "site",	// Тема меню
+                ),
+                    false
+                );?>
+
+            </div>
+            <div class="footer__col flex-3">
+                <div class="footer__phone icon-phone">
+                    <img src="<?=SITE_TEMPLATE_PATH?>/img/footer_phone.jpg">
+                    <span>88005555550</span>
+                </div>
+                <a href="javascript:void(0);" class="footer__callback footer__link callback-btn">Заказать звонок</a>
+                <div class="footer__email icon-email">
+                    <a href="mailto:<?=tplvar('email');?>" class="footer__link roi_visit"><?=tplvar('email', true);?></a>
+                    (Для заказов)
+                </div>
+            </div>
+            <div class="footer__col flex-2">
+                <div class="footer__copy icon-copyright"><?=date("Y")?> Все права защищены.</div>
+
+                <a href="https://prime-ltd.su/?from=proktolog.su" target="_blank" rel="nofollow">
+                <img src="https://prime-ltd.su/logo/white.svg" 
+                title="Продвижение сайтов" 
+                alt="Продвижение сайтов"
+                style="display: inline-block; vertical-align: top; max-width: 225px; height: auto;">
+                </a>
+
+
+            </div>
+        </div>
+		<?php
+		$proktologLegal = include $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/legal/config.php';
+		$legalUrls = $proktologLegal['images'];
+		?>
+		<div class="cookies-info"><noindex>Сайт использует файлы <a style="color: #fff;" target="_blank" rel="nofollow noopener" href="<?= htmlspecialcharsbx($legalUrls['cookie']) ?>">cookies</a> для корректной работы, аналитики трафика и настройки рекламы. Продолжая использовать сайт, вы даёте <a style="color: #fff;" target="_blank" rel="nofollow noopener" href="<?= htmlspecialcharsbx($legalUrls['consent']) ?>">согласие на обработку персональных данных</a> и соглашаетесь с <a style="color: #fff;" target="_blank" rel="nofollow noopener" href="<?= htmlspecialcharsbx($legalUrls['personal_data']) ?>">Политикой обработки персональных данных</a>. Чтобы отказаться от сохранения cookie, отключите их в настройках браузера. На сайте также применяются <a style="color: #fff;" target="_blank" rel="nofollow noopener" href="<?= htmlspecialcharsbx($legalUrls['recommendation']) ?>">рекомендательные технологии</a>.</noindex></div>
+    </div>
+</div>
+
+
+
+
+
+<?$APPLICATION->IncludeComponent(
+	"nbrains:main.feedback", 
+	"popup-callback", 
+	array(
+		"EMAIL_TO" => "info@proktolog.su",
+		"EVENT_NAME" => "CALLBACK",
+		"EVENT_MESSAGE_ID" => array(
+			0 => "53",
+		),
+		"IBLOCK_ID" => "37",
+		"IBLOCK_TYPE" => "feedback",
+		"OK_TEXT" => "Спасибо, ваше сообщение принято.",
+		"PROPERTY_CODE" => array(
+			0 => "NAME",
+			1 => "URL",
+			2 => "PHONE",
+			3 => "MAIL",
+			4 => "QUERY",
+		),
+		"USE_CAPTCHA" => "N",
+		"COMPONENT_TEMPLATE" => "popup-callback",
+		"COMPOSITE_FRAME_MODE" => "N",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
+	),
+	false
+);?>
+
+
+
+
+<script src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/alertify.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.maskinput.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.bpopup.min.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/lightgallery.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/vendor/jquery-ui/jquery-ui.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/functions.js"></script>
+
+
+<!-- Yandex.Metrika counter от Prime -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter50918582 = new Ya.Metrika2({
+                    id:50918582,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/50918582" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+<!-- Сквозная от Prime -->
+<script>
+(function(w, d, s, h, id) {
+    w.roistatProjectId = id; w.roistatHost = h;
+    var p = d.location.protocol == "https:" ? "https://" : "http://";
+    var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init";
+    var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+})(window, document, 'script', 'cloud.roistat.com', '3c475c3424fce13a0e7695581c3ee008');
+</script>
+
+</body>
+</html>

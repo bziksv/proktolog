@@ -1,0 +1,3 @@
+<?
+$sSectionName = 'Юридические документы';
+$arDirProperties = [];

@@ -1,0 +1,30 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.legal-print {
+    box-sizing: border-box;
+    width: 900px;
+    margin: 0;
+    padding: 32px 36px 40px;
+    background: #fff;
+}
+
+.legal-page--print {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.legal-page--print .legal-doc__related a {
+    white-space: normal;
+}
