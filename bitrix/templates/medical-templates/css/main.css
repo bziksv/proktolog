@@ -617,6 +617,11 @@ ol,ul
     margin-bottom: 30px;
     position: relative;
 }
+.slider .lSSlideOuter,
+.slider .lSSlideWrapper
+{
+    max-width: 100%;
+}
 .slider a{
     text-decoration: none;
 }
