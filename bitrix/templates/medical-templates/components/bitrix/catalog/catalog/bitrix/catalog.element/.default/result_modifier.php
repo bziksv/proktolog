@@ -586,10 +586,11 @@ if ($arResult['MODULES']['currency'])
 	}
 }
 
-foreach($arResult['PROPERTIES']['MORE_PHOTO']['VALUE'] as $img){
+foreach ((array)($arResult['PROPERTIES']['MORE_PHOTO']['VALUE'] ?? []) as $img){
 	$arResult['PHOTO'][] = $img;
 }
 
+if (!empty($arResult['PROPERTIES']['PRICES']['VALUE']) && is_array($arResult['PROPERTIES']['PRICES']['VALUE'])) {
 foreach ($arResult['PROPERTIES']['PRICES']['VALUE'] as $key => &$price){
 
     $arResult['PRICES']['BASE']['OLD'][$key] = $price;
@@ -601,6 +602,7 @@ foreach ($arResult['PROPERTIES']['PRICES']['VALUE'] as $key => &$price){
         $arDiscounts
     );
     $price = ($discountPrice) ? $discountPrice : $price;
+}
 }
 
 ?>

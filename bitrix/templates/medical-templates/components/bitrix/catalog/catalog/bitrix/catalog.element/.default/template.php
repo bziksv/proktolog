@@ -132,10 +132,16 @@ $this->setFrameMode(true);
 		</div>
 		<?endif?>
 
-		<?if($arResult['PROPERTIES']['CML2_COMPLECT']['VALUE']['TEXT']):?>
+		<?php
+		$cml2ComplectRaw = $arResult['PROPERTIES']['CML2_COMPLECT']['~VALUE'] ?? $arResult['PROPERTIES']['CML2_COMPLECT']['VALUE'] ?? '';
+		$cml2ComplectText = is_array($cml2ComplectRaw)
+			? (string)($cml2ComplectRaw['TEXT'] ?? '')
+			: (string)$cml2ComplectRaw;
+		?>
+		<?if($cml2ComplectText !== ''):?>
 		<a href="#" class="tabs__nav">Комплектация</a>
 		<div class="tabs__content text">
-			<?=$arResult['PROPERTIES']['CML2_COMPLECT']['~VALUE']['TEXT']?>
+			<?=$cml2ComplectText?>
 		</div>
 		<?endif;?>
 
