@@ -48,6 +48,14 @@ upload/*
 !upload/sale/paysystem/
 !upload/sale/paysystem/logotip/
 !upload/sale/paysystem/logotip/**
+!upload/iblock/
+upload/iblock/*
+!upload/iblock/aa1/
+upload/iblock/aa1/*
+!upload/iblock/aa1/ehwhdr53vsp25uzuiavgo1uuiu1p0o3m.png
+!upload/iblock/f89/
+upload/iblock/f89/*
+!upload/iblock/f89/c9hvck8kkko1vu5g4eeb9b4jbhuf5j6z.png
 
 # --- Логи ---
 *.log
@@ -80,6 +88,7 @@ Thumbs.db
 # --- Прочее ---
 /access/
 /node_modules/
+scripts/node_modules/
 /vendor/
 *.sql
 *.sql.gz
