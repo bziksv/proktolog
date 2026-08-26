@@ -23,10 +23,6 @@
 	padding-right: 60px;
 }
 
-.slider__item--no-title
-{
-    background-position: 40% center;
-}
 .slider__item--no-title .slider__title
 {
     display: none;

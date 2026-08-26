@@ -33,7 +33,7 @@ const slides = [
         fileId: 37430,
         relPath: 'iblock/aa1/ehwhdr53vsp25uzuiavgo1uuiu1p0o3m.png',
         source: 'brand-letterboxed-1920x567.png',
-        mode: 'copy',
+        mode: 'crop-letterbox',
     },
 ];
 
