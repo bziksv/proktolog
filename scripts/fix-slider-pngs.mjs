@@ -7,7 +7,7 @@
  */
 
 import sharp from 'sharp';
-import { stat } from 'node:fs/promises';
+import { copyFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -33,13 +33,19 @@ const slides = [
         fileId: 37430,
         relPath: 'iblock/aa1/ehwhdr53vsp25uzuiavgo1uuiu1p0o3m.png',
         source: 'brand-letterboxed-1920x567.png',
-        mode: 'crop-letterbox',
+        mode: 'copy',
     },
 ];
 
 async function upscale(slide) {
     const sourcePath = path.join(sourcesDir, slide.source);
     const outputPath = path.join(uploadDir, slide.relPath);
+
+    if (slide.mode === 'copy') {
+        await copyFile(sourcePath, outputPath);
+        const fileStat = await stat(outputPath);
+        return { ...slide, bytes: fileStat.size };
+    }
 
     let pipeline = sharp(sourcePath);
     const meta = await pipeline.metadata();
