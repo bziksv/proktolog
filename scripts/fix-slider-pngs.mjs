@@ -76,9 +76,6 @@ async function main() {
             `UPDATE b_file SET WIDTH=${TARGET_W}, HEIGHT=${TARGET_H}, FILE_SIZE=${item.bytes} WHERE ID=${item.fileId};\n`,
         );
     }
-    process.stdout.write(
-        "UPDATE b_iblock_element SET PREVIEW_TEXT='' WHERE ID=10550;\n",
-    );
 }
 
 main().catch((error) => {

@@ -23,7 +23,7 @@ return false;
 			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
-			<li class="slider__item" style="background-image: url(<?=$arItem['PREVIEW_PICTURE']['SRC']?>)">
+			<li class="slider__item<?=$arItem['PREVIEW_TEXT'] ? '' : ' slider__item--no-title'?>" style="background-image: url(<?=$arItem['PREVIEW_PICTURE']['SRC']?>)">
 				<a href="<?=htmlspecialcharsbx($arItem['CODE'])?>">
 					<div class="container">
 						<div class="slider__title">

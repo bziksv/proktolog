@@ -11,9 +11,18 @@
 }
 
 .slider .lSSlideOuter .lSAction > .lSPrev {
-	left: max(10px, calc((100% - 1200px) / 2 + 10px));
+	left: max(10px, calc((100% - 1200px) / 2 - 42px));
 }
 
 .slider .lSSlideOuter .lSAction > .lSNext {
-	right: max(10px, calc((100% - 1200px) / 2 + 10px));
+	right: max(10px, calc((100% - 1200px) / 2 - 42px));
+}
+
+.slider__item .container {
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+.slider__item--no-title {
+	background-position: 54% center;
 }
