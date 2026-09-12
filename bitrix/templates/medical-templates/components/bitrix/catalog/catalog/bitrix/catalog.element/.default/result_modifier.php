@@ -586,8 +586,56 @@ if ($arResult['MODULES']['currency'])
 	}
 }
 
-foreach ((array)($arResult['PROPERTIES']['MORE_PHOTO']['VALUE'] ?? []) as $img){
-	$arResult['PHOTO'][] = $img;
+$arResult['PHOTO'] = [];
+$photoIds = [];
+$detailId = (int)($arResult['DETAIL_PICTURE']['ID'] ?? 0);
+$previewId = (int)($arResult['PREVIEW_PICTURE']['ID'] ?? 0);
+// One main image only: detail if file exists, otherwise preview.
+foreach ([$detailId, $previewId] as $imgId)
+{
+	if ($imgId <= 0)
+	{
+		continue;
+	}
+	$path = CFile::GetPath($imgId);
+	if ($path && is_file($_SERVER['DOCUMENT_ROOT'].$path))
+	{
+		$photoIds[$imgId] = $imgId;
+		break;
+	}
+}
+$morePhoto = $arResult['PROPERTIES']['MORE_PHOTO']['VALUE'] ?? null;
+if ($morePhoto !== null && $morePhoto !== '' && $morePhoto !== false)
+{
+	if (!is_array($morePhoto))
+	{
+		$morePhoto = [$morePhoto];
+	}
+	foreach ($morePhoto as $img)
+	{
+		$imgId = (int)$img;
+		if ($imgId > 0)
+		{
+			$photoIds[$imgId] = $imgId;
+		}
+	}
+}
+$seenHashes = [];
+foreach ($photoIds as $imgId)
+{
+	$path = CFile::GetPath($imgId);
+	$fullPath = $path ? $_SERVER['DOCUMENT_ROOT'].$path : '';
+	if (!$fullPath || !is_file($fullPath))
+	{
+		continue;
+	}
+	$hash = md5_file($fullPath);
+	if ($hash === false || isset($seenHashes[$hash]))
+	{
+		continue;
+	}
+	$seenHashes[$hash] = true;
+	$arResult['PHOTO'][] = $imgId;
 }
 
 if (!empty($arResult['PROPERTIES']['PRICES']['VALUE']) && is_array($arResult['PROPERTIES']['PRICES']['VALUE'])) {
