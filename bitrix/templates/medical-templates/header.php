@@ -61,7 +61,7 @@ if (substr($APPLICATION->GetCurPage(),-3) === "-r/") {
             );?>
 
             <div class="top__account">
-                <svg class="icon icon-user"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?=SITE_TEMPLATE_PATH?>/img/sprite.svg#icon-user"></use></svg>
+                <svg class="icon icon-user" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 0C5.8 0 0 5.8 0 13s5.8 13 13 13 13-5.8 13-13S20.2 0 13 0zm6.6 19.2c0 .4-.3.7-.7.7H7.2c-.4 0-.7-.3-.7-.7v-.3c0-.9.4-1.8 1.1-2.3 1.5-1.1 2.9-1.8 3.2-1.9l.1-.1v-1.3c-.2-.3-.3-.7-.4-1-.1 0-.3-.2-.5-.9-.3-1 0-1.1.3-1.1 0-.1-.1-.3-.1-.4-.1-.5-.1-.9 0-1.3.1-.5.4-1 .8-1.3.2-.2.4-.4.7-.6.2-.1.4-.3.7-.3.2-.1.4-.1.6-.1.5-.3 1-.1 1.4.1.5.3.8.7.8.7s1.3.1.8 2.6c0 .1-.1.3-.1.4.2 0 .5.1.3 1.1-.2.7-.4.9-.5.9 0 .3-.2.7-.4 1v1.3s0 .1.1.1c.3.2 1.7.9 3.2 1.9.7.5 1.2 1.4 1.1 2.3v.5z"/></svg>
                 <?if ($USER->IsAuthorized()):
                     $name = trim($USER->GetFullName());
                     if (! $name)

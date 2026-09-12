@@ -114,10 +114,10 @@ $intSectionID = 0;
 		</div>
 		<div class="filter__view">
 			<a href="?<?=http_build_query(array_merge($GLOBALS['_GET'],array("TEMPLATE_THEME" => ".default")))?>" class="filter__view_link <?=($_SESSION['TEMPLATE_THEME'] == ".default" OR !$_SESSION['TEMPLATE_THEME']) ? 'active' : ''?>">
-				<svg class="icon icon-grid"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?=SITE_TEMPLATE_PATH;?>/img/sprite.svg#icon-grid"></use></svg>
+				<svg class="icon icon-grid" viewBox="0 0 19 19" aria-hidden="true"><path d="M5 5H0V0h5v5zm7-5H7v5h5V0zm7 0h-5v5h5V0zM5 7H0v5h5V7zm7 0H7v5h5V7zm7 0h-5v5h5V7zM5 14H0v5h5v-5zm7 0H7v5h5v-5zm7 0h-5v5h5v-5z"/></svg>
 			</a>
 			<a href="?<?=http_build_query(array_merge($GLOBALS['_GET'],array("TEMPLATE_THEME" => "list")))?>" class="filter__view_link <?=($_SESSION['TEMPLATE_THEME'] == "list") ? 'active' : ''?>">
-				<svg class="icon icon-list"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?=SITE_TEMPLATE_PATH;?>/img/sprite.svg#icon-list"></use></svg>
+				<svg class="icon icon-list" viewBox="0 0 19 19" aria-hidden="true"><path d="M19 5H0V0h19v5zm0 2H0v5h19V7zm0 7H0v5h19v-5z"/></svg>
 			</a>
 		</div>
 	</form>

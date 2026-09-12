@@ -11,5 +11,5 @@
  <b>Поставка и оплата товара без оформления договора на индивидуальных условиях</b>
 </p>
 <p>
-	 В случае оплаты счета без запроса на заключение дополнительного договора поставки на индвидуальных условиях, вы соглашаетесь с правилами договора оферты, по адресу:&nbsp;<noindex><a href="https://proktolog.su/upload/oferta-proktolog.pdf" rel="nofollow" target="_blank">https://proktolog.su/upload/oferta-proktolog.pdf</a></noindex>
+	 В случае оплаты счета без запроса на заключение дополнительного договора поставки на индвидуальных условиях, вы соглашаетесь с правилами договора оферты, по адресу:&nbsp;<!--noindex--><a href="https://proktolog.su/upload/oferta-proktolog.pdf" rel="nofollow" target="_blank">https://proktolog.su/upload/oferta-proktolog.pdf</a><!--/noindex-->
 </p>
