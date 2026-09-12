@@ -8,7 +8,7 @@
  *
  * On prod (after deploy):
  *   cd /var/www/proktolog.su/data/www/proktolog.su
- *   php -d short_open_tag=1 scripts/rebuild-sitemap.php
+ *   /opt/php82/bin/php -d short_open_tag=1 scripts/rebuild-sitemap.php
  */
 if (PHP_SAPI !== 'cli') {
 	fwrite(STDERR, "CLI only\n");
