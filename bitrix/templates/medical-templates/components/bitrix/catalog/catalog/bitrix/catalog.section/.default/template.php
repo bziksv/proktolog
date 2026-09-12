@@ -63,7 +63,7 @@ if(empty($arResult['ITEMS']))
 
 							<div class="goods__counter">
 								<div class="goods__counter_subtract">-</div>
-								<input type="text" class="goods__counter_input" id="goods__counter_input_<?=$arResult['ID']?>" value="1" readonly>
+								<input type="text" class="goods__counter_input" id="goods__counter_input_<?=$item['ID']?>" value="1" readonly>
 								<div class="goods__counter_add">+</div>
 							</div>
 							<span>за штуку</span>

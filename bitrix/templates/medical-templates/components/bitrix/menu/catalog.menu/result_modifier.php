@@ -24,6 +24,10 @@ $arParents = array();
 $depth = 1;
 foreach($arResult as $i=>$arMenu)
 {
+	if (!is_array($arMenu) || !isset($arMenu['DEPTH_LEVEL'])) {
+		continue;
+	}
+
 	$depth = $arMenu['DEPTH_LEVEL'];
 
 	if($arMenu['IS_PARENT'] == true)

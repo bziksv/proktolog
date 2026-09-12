@@ -15,6 +15,9 @@ if (!is_array($ufDeleteIndex)) {
 $previousLevel = 0;
 
 foreach($arResult as $key => $arItem):
+	if (!is_array($arItem) || !isset($arItem['DEPTH_LEVEL'])) {
+		continue;
+	}
 ?>
 	<?if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel):?>
 		<?=str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));?>
