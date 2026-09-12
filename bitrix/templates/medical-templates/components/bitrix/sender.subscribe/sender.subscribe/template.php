@@ -67,9 +67,12 @@ $buttonId = $this->randString();
 					}
 
 					var btn_span = btn.querySelector("span");
-					var btn_subscribe_width = btn_span.style.width;
+					var btn_subscribe_width = btn_span ? btn_span.style.width : "";
 					BX.addClass(btn, "send");
-					btn_span.outterHTML = "<span><i class='fa fa-check'></i> <?=GetMessage("subscr_form_button_sent")?></span>";
+					// Avoid literal end tags for i/span in this script (libxml stray end-tag false positives)
+					if (btn_span) {
+						btn_span.outerHTML = "<span><i class='fa fa-check'><" + "/i> <?=GetMessage("subscr_form_button_sent")?><" + "/span>";
+					}
 					if(btn_subscribe_width)
 					{
 						btn.querySelector("span").style["min-width"] = btn_subscribe_width+"px";
