@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("title", "Как заказать проктологическое оборудование в магазине Proktolog.su");
 $APPLICATION->SetPageProperty("description", "Выберите желаемые товары из каталога, поместите их в корзину или отправьте заявку на электронную почту. Все приборы и инструменты разделены на тематические категории для удобства выбора.");
 $APPLICATION->SetTitle("Как заказать?");
 ?>

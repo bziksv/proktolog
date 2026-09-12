@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("title", "Оплата заказа в интернет-магазине Proktolog.su — условия и способы");
 $APPLICATION->SetPageProperty("description", "Наша компания принимает заказы с предоплатой. После утверждения заказа, вышлем счёт. Отправьте запрос, если товара нет в наличии. Поставка без договора, оплата по оферте.");
 $APPLICATION->SetTitle("Оплата");
 ?>
