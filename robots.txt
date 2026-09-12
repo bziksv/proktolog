@@ -56,5 +56,26 @@ Allow: /about/
 Allow: /dostavka/
 Allow: /oplata/
 Allow: /klientam/kak-zakazat/
+########################
+Disallow: /googlee84fbc11d340a0de.html
+Disallow: /googleff0da0f1125cc1fa.html
+Disallow: /hand1CtoSite.php
+Disallow: /mailru-domainVXG4wZAwoL3aHmVg.html
+Disallow: /sect_bottom.php
+Disallow: /sect_sidebar.php
+Disallow: /yandex_a7bd185cfbda2fb4.html
+Disallow: /yandex_f8f022bdeef810b3.html
+Disallow: /catalog/sidebar.php
+Disallow: /desktop_app/
+Disallow: /dostavka/content.php
+Disallow: /include/
+Disallow: /kontakty/content.php
+Disallow: /search/
+Disallow: /site_db/
+Disallow: /store/
+Disallow: /test/
+Disallow: /klientam/kak-zakazat/content.php
+Disallow: /scripts/
+Disallow: /legal/print/
 Host: https://proktolog.su/
 Sitemap: https://proktolog.su/sitemap.xml
