@@ -2,6 +2,62 @@
 //IBlock catalog id
 define("IBLOCK_CATALOG","33");
 
+/**
+ * Soft-fix common CMS HTML mistakes before output (DETAIL_TEXT / section DESCRIPTION).
+ */
+function proktologSanitizeCmsHtml($html)
+{
+	$html = (string)$html;
+	if ($html === '') {
+		return $html;
+	}
+
+	// <b>/<i>/… cannot wrap block tags — unwrap the inline wrapper
+	$html = preg_replace(
+		'#<(b|strong|i|em)(\s[^>]*)?>\s*(<(?:p|div|h[1-6]|ul|ol|table|hr)\b[^>]*>)#is',
+		'$3',
+		$html
+	);
+	$html = preg_replace(
+		'#(</(?:p|div|h[1-6]|ul|ol|table)>)\s*</(?:b|strong|i|em)>#is',
+		'$1',
+		$html
+	);
+
+	// Orphan <li>…</li></ul> without opening <ul>
+	if (preg_match('/<li\b/i', $html) && !preg_match('/<ul\b/i', $html) && preg_match('/<\/ul>/i', $html)) {
+		$html = preg_replace('/(<li\b)/i', '<ul>$1', $html, 1);
+	} elseif (preg_match('/<li\b/i', $html) && !preg_match('/<ul\b/i', $html)) {
+		$html = preg_replace('/(<li\b)/i', '<ul>$1', $html, 1);
+		$html .= '</ul>';
+	}
+
+	// Drop stray list end-tags (unmatched closes)
+	$stack = [];
+	$html = (string)preg_replace_callback(
+		'/<\/?(ul|ol|li)\b[^>]*>/i',
+		static function ($m) use (&$stack) {
+			$name = strtolower($m[1]);
+			$isClose = (isset($m[0][1]) && $m[0][1] === '/');
+			if ($isClose) {
+				if (!$stack || end($stack) !== $name) {
+					return '';
+				}
+				array_pop($stack);
+				return $m[0];
+			}
+			$stack[] = $name;
+			return $m[0];
+		},
+		$html
+	);
+	while ($stack) {
+		$html .= '</' . array_pop($stack) . '>';
+	}
+
+	return $html;
+}
+
 if (
 	(!empty($_REQUEST['success']) && is_string($_REQUEST['success']))
 	|| (!empty($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST')

@@ -114,7 +114,7 @@ $this->setFrameMode(true);
 		<?if($arResult['DETAIL_TEXT']):?>
 		<a href="#" class="tabs__nav">Описание</a>
 		<div class="tabs__content text">
-			<?=$arResult['DETAIL_TEXT']?>
+			<?=proktologSanitizeCmsHtml($arResult['DETAIL_TEXT'])?>
 		</div>
 		<?endif?>
 
