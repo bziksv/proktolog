@@ -96,4 +96,47 @@ if (0 < $arResult['SECTIONS_COUNT'])
 		}
 	}
 }
+
+// If section picture is missing or file is gone from disk, use first product preview.
+if (!empty($arResult['SECTIONS']) && CModule::IncludeModule('iblock'))
+{
+	foreach ($arResult['SECTIONS'] as $key => $arSection)
+	{
+		$pictureSrc = is_array($arSection['PICTURE'] ?? null) ? (string)($arSection['PICTURE']['SRC'] ?? '') : '';
+		$pictureMissing = ($pictureSrc === '');
+		if (!$pictureMissing && !empty($arSection['PICTURE']['ID']))
+		{
+			$filePath = CFile::GetPath((int)$arSection['PICTURE']['ID']);
+			$abs = $filePath ? $_SERVER['DOCUMENT_ROOT'].$filePath : '';
+			$pictureMissing = (!$filePath || !is_file($abs));
+		}
+
+		if (!$pictureMissing)
+		{
+			continue;
+		}
+
+		$res = CIBlockElement::GetList(
+			['SORT' => 'ASC', 'ID' => 'ASC'],
+			[
+				'IBLOCK_ID' => (int)$arParams['IBLOCK_ID'],
+				'SECTION_ID' => (int)$arSection['ID'],
+				'INCLUDE_SUBSECTIONS' => 'N',
+				'ACTIVE' => 'Y',
+				'!PREVIEW_PICTURE' => false,
+			],
+			false,
+			['nTopCount' => 1],
+			['ID', 'PREVIEW_PICTURE']
+		);
+		if ($el = $res->Fetch())
+		{
+			$file = CFile::GetFileArray((int)$el['PREVIEW_PICTURE']);
+			if ($file && !empty($file['SRC']))
+			{
+				$arResult['SECTIONS'][$key]['PICTURE'] = $file;
+			}
+		}
+	}
+}
 ?>
