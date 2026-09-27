@@ -95,7 +95,7 @@ if (substr($APPLICATION->GetCurPage(),-3) === "-r/") {
             </div>
             <div class="header__contact">
                 <div class="header__title">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/header_phone.jpg">
+                    <img src="<?=SITE_TEMPLATE_PATH?>/img/header_phone.jpg" alt="8 800 555-55-50">
                     <span></span>
                 </div>
                 <div class="header__desc">Бесплатные звонки по РФ</div>

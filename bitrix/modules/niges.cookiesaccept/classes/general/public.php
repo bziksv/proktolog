@@ -1,6 +1,9 @@
 <?php
 class CNigesCookiesAcceptPublic
 {
+	/** @var string */
+	protected static $bannerHtml = '';
+
 	/**
 	 * Inject cookie notice at the end of page generation.
 	 */
@@ -26,6 +29,7 @@ class CNigesCookiesAcceptPublic
 			return;
 		}
 
+		ob_start();
 		$APPLICATION->IncludeComponent(
 			'niges:cookiesaccept',
 			'.default',
@@ -33,5 +37,24 @@ class CNigesCookiesAcceptPublic
 			false,
 			array('HIDE_ICONS' => 'Y')
 		);
+		$html = ob_get_clean();
+		if (!is_string($html) || $html === '') {
+			return;
+		}
+
+		// Epilog runs after </html> is already in the buffer. Insert the banner before </body>.
+		self::$bannerHtml = $html;
+		AddEventHandler('main', 'OnEndBufferContent', array(__CLASS__, 'OnEndBufferContent'));
+	}
+
+	public static function OnEndBufferContent(&$content)
+	{
+		if (self::$bannerHtml === '' || !is_string($content) || stripos($content, '</body>') === false) {
+			return;
+		}
+		if (strpos($content, 'id="nca-cookiesaccept-line"') !== false) {
+			return;
+		}
+		$content = preg_replace('/<\/body>/i', self::$bannerHtml . '</body>', $content, 1);
 	}
 }

@@ -1,6 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Медицинская техника для проктологов, полный каталог оборудования по ценам производителя с доставкой по РФ. Звоните!");
+$catalogPage = $APPLICATION->GetCurPage(false);
+if ($catalogPage === "/catalog/" || $catalogPage === "/catalog/index.php")
+{
+	$APPLICATION->SetPageProperty("description", "Медицинская техника для проктологов, полный каталог оборудования по ценам производителя с доставкой по РФ. Звоните!");
+}
 $APPLICATION->SetTitle("Каталог проктологического оборудования");
 ?><div class="wrapper">
 

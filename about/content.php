@@ -9,7 +9,7 @@
  <br>
 </p>
 <p>
- <img width="350" src="/upload/medialibrary/628/2j26qybm8k0zacqdtx7fnr1saufyp1j9.jpg" style="margin: 0px 40px 10px 0px;"> <img width="350" src="/upload/medialibrary/02d/4gq1kg8e2f7b1c15xk09sj23bjz14cdq.jpg" style="margin: 0px 40px 10px 0px;">
+ <img width="350" src="/upload/medialibrary/628/2j26qybm8k0zacqdtx7fnr1saufyp1j9.jpg" style="margin: 0px 40px 10px 0px;" alt="Оборудование для проктологии"> <img width="350" src="/upload/medialibrary/02d/4gq1kg8e2f7b1c15xk09sj23bjz14cdq.jpg" style="margin: 0px 40px 10px 0px;" alt="Медицинская техника Proktolog.su">
 </p>
 <p>
  <b><i>Если у Вас есть предложения, комментарии или претензии по поводу нашей работы - пишите на почту </i></b><a href="mailto:info@proktolog.su."><b><i>info@proktolog.su.</i></b></a>
