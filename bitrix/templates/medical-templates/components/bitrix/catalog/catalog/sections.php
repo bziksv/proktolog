@@ -13,7 +13,8 @@
 
 $this->setFrameMode(true);
 
-?><?$APPLICATION->IncludeComponent(
+?><h1 class="title"><?$APPLICATION->ShowTitle(false);?></h1><?
+$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"",
 	array(
