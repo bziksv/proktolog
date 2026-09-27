@@ -116,27 +116,37 @@ if (!empty($arResult['SECTIONS']) && CModule::IncludeModule('iblock'))
 			continue;
 		}
 
+		$replacement = false;
 		$res = CIBlockElement::GetList(
 			['SORT' => 'ASC', 'ID' => 'ASC'],
 			[
 				'IBLOCK_ID' => (int)$arParams['IBLOCK_ID'],
 				'SECTION_ID' => (int)$arSection['ID'],
-				'INCLUDE_SUBSECTIONS' => 'N',
+				'INCLUDE_SUBSECTIONS' => 'Y',
 				'ACTIVE' => 'Y',
 				'!PREVIEW_PICTURE' => false,
 			],
 			false,
-			['nTopCount' => 1],
+			['nTopCount' => 8],
 			['ID', 'PREVIEW_PICTURE']
 		);
-		if ($el = $res->Fetch())
+		while ($el = $res->Fetch())
 		{
 			$file = CFile::GetFileArray((int)$el['PREVIEW_PICTURE']);
-			if ($file && !empty($file['SRC']))
+			if (!$file || empty($file['SRC']))
 			{
-				$arResult['SECTIONS'][$key]['PICTURE'] = $file;
+				continue;
 			}
+			$abs = $_SERVER['DOCUMENT_ROOT'].$file['SRC'];
+			if (!is_file($abs))
+			{
+				continue;
+			}
+			$replacement = $file;
+			break;
 		}
+
+		$arResult['SECTIONS'][$key]['PICTURE'] = $replacement ?: ['SRC' => ''];
 	}
 }
 ?>
