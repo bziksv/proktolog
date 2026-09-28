@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Новости для пациентов и врачей в области проктологии");
-$APPLICATION->SetPageProperty("description", "Новости сайте proktolog.su - полезные материалы о проктологии");
+$APPLICATION->SetPageProperty("description", "Новости сайта proktolog.su — полезные материалы о проктологии и медицинском оборудовании");
 $APPLICATION->SetTitle("Новости");
 ?>
 
