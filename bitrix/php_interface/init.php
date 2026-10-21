@@ -2,6 +2,10 @@
 //IBlock catalog id
 define("IBLOCK_CATALOG","33");
 
+// PHP 8: метода CGroupAuthProvider::OnUserLogin нет, Authorize падает с TypeError.
+// Сессия уже создана, поэтому первый клик оформления заказа даёт 500, второй проходит.
+UnRegisterModuleDependences('main', 'OnUserLogin', 'main', 'CGroupAuthProvider', 'OnUserLogin');
+
 /**
  * Soft-fix common CMS HTML mistakes before output (DETAIL_TEXT / section DESCRIPTION).
  */
