@@ -2,7 +2,7 @@
 set -e
 cd "$(dirname "$0")/.."
 SITE_ROOT="$(pwd)"
-PHP83=/opt/homebrew/opt/php@8.3
+PHP82=/opt/homebrew/opt/php@8.2
 NGINX=/opt/homebrew/bin/nginx
 RUN_DIR="$SITE_ROOT/.local/run"
 
@@ -56,7 +56,7 @@ cp "$SITE_ROOT/.local/php/php.ini" "$RUN_DIR/php.ini"
 
 export PHPRC="$RUN_DIR/php.ini"
 
-"$PHP83/sbin/php-fpm" -y "$RUN_DIR/fpm.conf" &
+"$PHP82/sbin/php-fpm" -y "$RUN_DIR/fpm.conf" &
 FPM_PID=$!
 sleep 1
 
