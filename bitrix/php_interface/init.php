@@ -1,4 +1,24 @@
 <?php
+// Readable digit-only CAPTCHA (drawing size/spacing also forced in bitrix/tools/captcha.php).
+if (
+	COption::GetOptionString("main", "CAPTCHA_letters", "") !== "23456789"
+	|| (int)COption::GetOptionString("main", "CAPTCHA_textDistance_1", "0") < 40
+) {
+	COption::SetOptionString("main", "CAPTCHA_letters", "23456789");
+	COption::SetOptionString("main", "CAPTCHA_bWaveTransformation", "N");
+	COption::SetOptionString("main", "CAPTCHA_bLinesOverText", "N");
+	COption::SetOptionString("main", "CAPTCHA_numEllipses", "0");
+	COption::SetOptionString("main", "CAPTCHA_numLines", "0");
+	COption::SetOptionString("main", "CAPTCHA_textAngel_1", "0");
+	COption::SetOptionString("main", "CAPTCHA_textAngel_2", "0");
+	COption::SetOptionString("main", "CAPTCHA_textDistance_1", "40");
+	COption::SetOptionString("main", "CAPTCHA_textDistance_2", "46");
+	COption::SetOptionString("main", "CAPTCHA_textFontSize", "20");
+	COption::SetOptionString("main", "CAPTCHA_textStartX", "12");
+	COption::SetOptionString("main", "CAPTCHA_transparentTextPercent", "0");
+	COption::SetOptionString("main", "CAPTCHA_presets", "0");
+}
+
 //IBlock catalog id
 define("IBLOCK_CATALOG","33");
 
