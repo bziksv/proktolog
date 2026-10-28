@@ -1873,8 +1873,12 @@
 
 				if (parseFloat(itemData.QUANTITY) !== parseFloat(quantity))
 				{
-					this.animatePriceByQuantity(itemData, quantity);
 					this.actionPool.changeQuantity(itemData.ID, quantity, currentQuantity);
+					try
+					{
+						this.animatePriceByQuantity(itemData, quantity);
+					}
+					catch (e) {}
 				}
 			}
 		},

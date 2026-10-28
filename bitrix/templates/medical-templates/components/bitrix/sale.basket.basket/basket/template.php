@@ -103,6 +103,8 @@ if ($arParams['USE_GIFTS'] === 'Y')
 	);
 }
 
+\CJSCore::Init(array('fx', 'popup', 'ajax'));
+
 $this->addExternalCss('/bitrix/css/main/bootstrap.css');
 $this->addExternalCss($templateFolder.'/themes/'.$arParams['TEMPLATE_THEME'].'/style.css');
 
