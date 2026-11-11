@@ -31,7 +31,6 @@
 					<div class="goods__text">
 						<?echo $arItem["BODY_FORMATED"]?>
 					</div>
-					<div class="goods__availability">В наличии</div>
 				</div>
 				<div class="goods__main">
 					<!--<div class="goods__rate">
