@@ -14,7 +14,8 @@ if(count($arResult["SEARCH"])>0){
 
             $price = priceDiscount($arFields['ID']);
             $arItem['PREVIEW_PICTURE'] = CFile::GetPath($arFields["PREVIEW_PICTURE"]);
-            $arItem['PRICE'] = CurrencyFormat($price['DISCOUNT_PRICE'], 'RUB');
+            // priceDiscount() already returns formatted price or "Цена по запросу"
+            $arItem['PRICE'] = $price['DISCOUNT_PRICE'];
             $arItem['DISCOUNT'] = ($price['RESULT_PRICE']['PERCENT']) ? round($price['RESULT_PRICE']['PERCENT']) : 0;
             $arItem['ARTICLS'] = $arProps['ARTICLS'];
         }

@@ -881,7 +881,7 @@ BX["UI"].FileInput.prototype = {
 			input.parentNode.insertBefore(BX.create("INPUT", { attrs : { type : "hidden", name : input_name, id : input.id, value : data['file']['uploadId'] }}), input);
 		}
 
-		while (BX(input) && input.name.indexOf(input_name) === 0)
+		while (BX(input) && input.tagName === "INPUT" && input.name && input.name.indexOf(input_name) === 0)
 		{
 			tmp = input.nextSibling;
 			BX.remove(input);
